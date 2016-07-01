@@ -52,7 +52,9 @@ public class swSAT {
     @WebMethod(operationName = "ObtenerEstadoForm")
     public MasterClass ObtenerEstadoForm(@WebParam(name = "parameter") MasterClass parameter) {
         //TODO write your implementation code here:
-        return null;
+        consultas query = new consultas();     
+        MasterClass respReturn = query.GetEstadoManifiestoSAT(conexionMysql.obtener(),parameter.getNumeroFormulario());
+        return respReturn;
     }
 
     /**
@@ -60,8 +62,9 @@ public class swSAT {
      */
     @WebMethod(operationName = "CambiarEstadoForm")
     public MasterClass CambiarEstadoForm(@WebParam(name = "parameter") MasterClass parameter) {
-        //TODO write your implementation code here:
-        return null;
+        consultas query = new consultas();     
+        MasterClass respReturn = query.SetEstadoManifiestoSAT(conexionMysql.obtener(),parameter.getNumeroFormulario());
+        return respReturn;
     }
     
     

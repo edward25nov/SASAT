@@ -43,6 +43,43 @@ public class consultas {
         }
         return mc;
     }
-    
 
+    public MasterClass GetEstadoManifiestoSAT(Connection conexion, int id){
+        MasterClass h = new MasterClass();
+        try {
+            Statement consulta = conexion.createStatement();
+            ResultSet resultado = consulta.executeQuery("SELECT m.* FROM manifiesto m WHERE m.idmanifiesto = "+id);
+            while(resultado.next()){
+                int r = resultado.getInt("estado");
+                double a = resultado.getDouble("monto");
+              if(r==1){
+                 h.setEstado(1);
+              }else{
+                 h.setMonto(a);
+                  h.setEstado(0);
+                  h.setNumeroFormulario(id);
+              }
+            }
+        } catch (SQLException ex) {
+            h.setDescripcion(ex.getMessage());
+            h.setEstado(0);
+            Logger.getLogger(consultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     return h;
+    }
+
+    public MasterClass SetEstadoManifiestoSAT(Connection conexion, int id){
+        MasterClass h = new MasterClass();
+        try {
+            Statement consulta = conexion.createStatement();
+            consulta.executeUpdate("UPDATE manifiesto SET estado = 1 WHERE idmanifiesto = "+id);
+            h.setEstado(1);
+        } catch (SQLException ex) {
+            h.setDescripcion(ex.getMessage());
+            h.setEstado(0);
+            Logger.getLogger(consultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     return h;
+    }
+    
 }
