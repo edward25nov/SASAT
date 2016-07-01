@@ -53,10 +53,10 @@ public class consultas {
                 int r = resultado.getInt("estado");
                 double a = resultado.getDouble("monto");
               if(r==1){
-                 h.setEstado(1);
+                 h.setEstado(1); // pagado
               }else{
                  h.setMonto(a);
-                  h.setEstado(0);
+                  h.setEstado(0); //no pagado
                   h.setNumeroFormulario(id);
               }
             }

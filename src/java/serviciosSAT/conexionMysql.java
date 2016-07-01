@@ -21,7 +21,8 @@ public class conexionMysql {
       if (cnx == null) {
          try {
             Class.forName("com.mysql.jdbc.Driver");
-            cnx = DriverManager.getConnection("jdbc:mysql://localhost/coagus_sa", "root", "123");
+            
+            cnx = DriverManager.getConnection("jdbc:mysql://christianagustin.com/coagus_sa", "coagus_engazado", "Barcelona5");
          } catch (SQLException ex) {
              try {
                  throw new SQLException(ex);
