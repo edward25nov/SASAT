@@ -51,7 +51,7 @@ public class consultas {
             ResultSet resultado = consulta.executeQuery("SELECT m.* FROM manifiesto m WHERE m.idmanifiesto = "+id);
             while(resultado.next()){
                 int r = resultado.getInt("estado");
-                double a = resultado.getDouble("monto");
+                double a = resultado.getFloat("monto");
               if(r==1){
                  h.setEstado(1); // pagado
               }else{
