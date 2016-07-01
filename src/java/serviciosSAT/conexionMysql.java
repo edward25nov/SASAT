@@ -35,7 +35,7 @@ public class conexionMysql {
       }
       return cnx;
    }
-   
+/*   
    public static void cerrar() {
       if (cnx != null) {
           try {
@@ -44,5 +44,5 @@ public class conexionMysql {
               Logger.getLogger(conexionMysql.class.getName()).log(Level.SEVERE, null, ex);
           }
       }
-   }
+   }*/
 }

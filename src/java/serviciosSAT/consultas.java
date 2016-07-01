@@ -48,7 +48,7 @@ public class consultas {
         MasterClass h = new MasterClass();
         try {
             Statement consulta = conexion.createStatement();
-            ResultSet resultado = consulta.executeQuery("SELECT m.* FROM manifiesto m WHERE m.idmanifiesto = "+id);
+            ResultSet resultado = consulta.executeQuery("SELECT m.estado,m.monto FROM manifiesto m WHERE m.idmanifiesto = "+id);
             while(resultado.next()){
                 int r = resultado.getInt("estado");
                 double a = resultado.getFloat("monto");
@@ -74,6 +74,7 @@ public class consultas {
             Statement consulta = conexion.createStatement();
             consulta.executeUpdate("UPDATE manifiesto SET estado = 1 WHERE idmanifiesto = "+id);
             h.setEstado(1);
+            h.setDescripcion("se pudo actualizar");
         } catch (SQLException ex) {
             h.setDescripcion(ex.getMessage());
             h.setEstado(0);
