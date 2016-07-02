@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class MasterClass {
         private int Categoria;
         private double PorcentajeArancelario;
-        private ArrayList<Item> DetalleItem;
+        private ArrayList<Item> DetalleItem; 
         private int NumeroFormulario;
         private double Monto;
         private int NumeroCuentaAcreditar;
