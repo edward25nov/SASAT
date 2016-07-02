@@ -16,8 +16,8 @@ import java.util.logging.Logger;
  * @author edward
  */
 public class conexionMysql {
-   private static Connection cnx = null;
-   public static Connection obtener()  {
+   private  Connection cnx = null;
+   public  Connection obtener()  {
       if (cnx == null) {
          try {
             Class.forName("com.mysql.jdbc.Driver");

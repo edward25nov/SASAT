@@ -60,7 +60,7 @@ public class consultas {
                   h.setNumeroFormulario(id);
               }
             }
-            h.setEstado(1);
+           // h.setEstado(1);
             h.setDescripcion("manifiesto obtenido");
         } catch (SQLException ex) {
             h.setDescripcion(ex.getMessage());

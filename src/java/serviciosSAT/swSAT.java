@@ -39,8 +39,9 @@ public class swSAT {
             monto += cantidadI * ( (precioI*impuesto) / 100);
         }
         //INSERTAR A MANIFIESTO Y RETORNAR NUMERO DE FORMULARIO Y MONTO
-        consultas query = new consultas();     
-        MasterClass respReturn = query.SetManifiestoSAT(conexionMysql.obtener(),monto);
+        consultas query = new consultas();  
+        conexionMysql a = new conexionMysql();
+        MasterClass respReturn = query.SetManifiestoSAT(a.obtener(),monto);
     //   conexionMysql.cerrar();
         return respReturn;
         //return null;
@@ -53,7 +54,8 @@ public class swSAT {
     public MasterClass ObtenerEstadoForm(@WebParam(name = "parameter") MasterClass parameter) {
         //TODO write your implementation code here:
         consultas query = new consultas();     
-        MasterClass respReturn = query.GetEstadoManifiestoSAT(conexionMysql.obtener(),parameter.getNumeroFormulario());
+        conexionMysql a = new conexionMysql();
+        MasterClass respReturn = query.GetEstadoManifiestoSAT(a.obtener(),parameter.getNumeroFormulario());
         return respReturn;
     }
 
@@ -63,7 +65,8 @@ public class swSAT {
     @WebMethod(operationName = "CambiarEstadoForm")
     public MasterClass CambiarEstadoForm(@WebParam(name = "parameter") MasterClass parameter) {
         consultas query = new consultas();     
-        MasterClass respReturn = query.SetEstadoManifiestoSAT(conexionMysql.obtener(),parameter.getNumeroFormulario());
+        conexionMysql a = new conexionMysql();
+        MasterClass respReturn = query.SetEstadoManifiestoSAT(a.obtener(),parameter.getNumeroFormulario());
         return respReturn;
     }
     
