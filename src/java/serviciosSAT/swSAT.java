@@ -69,6 +69,17 @@ public class swSAT {
         MasterClass respReturn = query.SetEstadoManifiestoSAT(a.obtener(),parameter.getNumeroFormulario());
         return respReturn;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "ConsultarAracelPorCategoria")
+    public MasterClass ConsultarAracelPorCategoria(@WebParam(name = "parameter") MasterClass parameter) {
+        consultas query = new consultas();     
+        conexionMysql a = new conexionMysql();
+        MasterClass respReturn = query.GetAracelPorCategoria(a.obtener(),parameter.getCategoria());
+        return respReturn;
+    }
     
     
 }

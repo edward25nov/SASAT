@@ -85,4 +85,21 @@ public class consultas {
      return h;
     }
     
+    public MasterClass GetAracelPorCategoria(Connection conexion, int id){
+        MasterClass h = new MasterClass();
+            
+        try {
+            Statement consulta = conexion.createStatement();
+            ResultSet resultado = consulta.executeQuery("SELECT a.porcentaje,a.nombre FROM arancel a where idarancel =  "+id);
+            while(resultado.next()){
+                h.setPorcentajeArancelario(resultado.getFloat("porcentaje"));
+                h.setDescripcion(resultado.getString("nombre"));
+            }      
+        } catch (SQLException ex) {
+            Logger.getLogger(consultas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return h;
+    }
+    
+    
 }
