@@ -83,6 +83,7 @@ public class swSAT {
         logger.info("Iniciando a Consultar Aracel por Categoria");
         consultas query = new consultas();     
         conexionMysql a = new conexionMysql();
+        logger.info("Vino la solicitud de categoria "+parameter.getCategoria());
         MasterClass respReturn = query.GetAracelPorCategoria(a.obtener(),parameter.getCategoria());
         logger.info("Finalizando  Consulta de Aracel por Categoria");
         return respReturn;

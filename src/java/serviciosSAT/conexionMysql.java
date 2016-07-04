@@ -22,7 +22,7 @@ public class conexionMysql {
          try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            cnx = DriverManager.getConnection("jdbc:mysql://christianagustin.com/coagus_sa", "coagus_engazado", "Barcelona5");
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost/coagus_sa", "root", "123");
          } catch (SQLException ex) {
              try {
                  throw new SQLException(ex);
